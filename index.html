@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Summer Heat Mobile Alert System</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family:'Segoe UI',Arial,sans-serif;
+      background: linear-gradient(115deg,#ffe7b9 0%,#e6f7ff 85%);
+      margin:0; min-height:100vh;
+    }
+    .header-bar {
+      background: linear-gradient(90deg,#ffb661 0%,#45d6e9 100%);
+      padding:1em 0;
+      font-size:2.1rem;
+      text-align:center;
+      color:#fff; font-weight:900; letter-spacing:1.1px;
+      border-radius: 1em 1em 0 0;
+      margin-bottom:0;
+    }
+    .dashboard-container {
+      max-width:820px;
+      margin:3em auto 0 auto;
+      display:flex; flex-direction:column; align-items:center;
+      padding-bottom:2.6em;
+    }
+    .section-title {
+      font-size:2em; font-weight:800; color:#e57c1a;
+      margin-bottom:1.1em; text-shadow:0 2px 16px #2a35390a;
+      letter-spacing:0.07em;
+      text-align:center;
+    }
+    .alert-card {
+      background: #fffbe7;
+      border-radius:21px;
+      box-shadow: 0 2px 32px #ffb66138;
+      border: 1.4px solid #ffe2b5;
+      padding: 2.15em 2.1em 2em 2.1em;
+      margin-bottom:2em; text-align:center; width:100%;
+      max-width:580px;
+    }
+    .alert-card i {
+      font-size:2.1em;
+      color:#e57c1a;
+      margin-bottom:0.65em;
+      animation: heatwave 1.8s infinite alternate;
+    }
+    @keyframes heatwave {
+      0%{ color:#e57c1a; }
+      100%{ color:#ff230b; }
+    }
+    .alert-card .alert-title {
+      font-weight:800;
+      font-size:1.30em;
+      color:#e57c1a;
+      margin-bottom:.42em;
+    }
+    .alert-card .alert-desc {
+      font-size:1.03em;
+      color:#43839c;
+      margin-bottom:1.1em;
+      font-weight:500;
+    }
+    .data-table {
+      margin:1.5em auto 1.2em auto;
+      border-radius:10px;
+      background:#fff;
+      box-shadow: 0 2px 17px #ffe2b5;
+      font-size:1.07em;
+      color:#283948;
+      border-collapse:collapse;
+      min-width:70%;
+      overflow:hidden;
+      border:1px solid #ffe2b5;
+    }
+    .data-table th, .data-table td {
+      padding:0.7em 1em;
+      text-align:center;
+    }
+    .data-table th {
+      background:#ffe7b9;
+      color:#e57c1a;
+      font-weight:700;
+      border-bottom:1.4px solid #ffe4be;
+      letter-spacing:0.03em;
+    }
+    .data-table td {
+      border-bottom:1px solid #fbe6c0;
+    }
+    .data-table tr:last-child td { border-bottom:none;}
+    .heatwave-row {background: #ffeedf }
+    .alert-card .sms-note {
+      font-size:1em;
+      color:#e57c1a;
+      margin-top:2em;
+      font-weight:500;
+      text-align:center;
+    }
+    .footer {
+      margin-top:2em;
+      text-align:center;
+      color:#7c5a32;
+      font-size:1.07em;
+    }
+    .footer-link {
+      color:#e57c1a;font-weight:600;text-decoration:none;margin:0 .7em;
+    }
+    .footer-link:hover { color:#ff230b;}
+    @media (max-width:650px){
+      .dashboard-container{padding:0 0.4em;}
+      .header-bar{font-size:1.19em;}
+      .section-title{font-size:1.2em;}
+      .alert-card{padding:1.3em 0.4em;}
+      .data-table{font-size:.93em;}
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar">
+    <i class="fa-solid fa-temperature-high"></i> Summer Heat Mobile Alert System
+  </div>
+  <div class="dashboard-container">
+    <div class="section-title">
+      <i class="fa-solid fa-bell"></i> Real-Time Heatwave Detection & SMS Alerts
+    </div>
+    <div class="alert-card">
+      <i class="fa-solid fa-fire"></i><br>
+      <span class="alert-title">Heatwave Detected!</span>
+      <div class="alert-desc">
+        Days exceeding the temperature threshold will automatically trigger a mobile SMS alert for safety.<br>
+        <span style="font-size:1.07em;color:#ef4b17;"><b>Threshold:</b> &nbsp;30°C &nbsp; | &nbsp;<b>Consecutive Days:</b> &nbsp;3+</span>
+      </div>
+      <table class="data-table">
+        <tr>
+          <th>Date</th>
+          <th>Temperature (°C)</th>
+          <th>Heatwave Status</th>
+          <th>SMS Sent</th>
+        </tr>
+        <tr>
+          <td>2025-06-10</td><td>32.6</td><td class="heatwave-row"><b>Yes</b></td><td><span style="color:green;"><i class="fa-solid fa-message"></i> Sent</span></td>
+        </tr>
+        <tr>
+          <td>2025-06-11</td><td>33.1</td><td class="heatwave-row"><b>Yes</b></td><td><span style="color:green;"><i class="fa-solid fa-message"></i> Sent</span></td>
+        </tr>
+        <tr>
+          <td>2025-06-12</td><td>34.0</td><td class="heatwave-row"><b>Yes</b></td><td><span style="color:green;"><i class="fa-solid fa-message"></i> Sent</span></td>
+        </tr>
+        <tr>
+          <td>2025-06-13</td><td>29.7</td><td><span style="color:#ffae8c;">No</span></td><td>--</td>
+        </tr>
+        <tr>
+          <td>2025-06-14</td><td>31.5</td><td><span style="color:#ffae8c;">No</span></td><td>--</td>
+        </tr>
+      </table>
+      <div class="sms-note">
+        <i class="fa-solid fa-mobile-screen"></i>
+        SMS Alert Example:<br>
+        <code>Heatwave detected on 2025-06-12 with temperature 34.0°C.</code>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    © 2025 <b>Summer Heat Alert</b> — Powered by <b>Pandas</b> and <b>Twilio</b>.
+    <a href="#" class="footer-link">Contact</a>
+    <a href="#" class="footer-link">Privacy Policy</a>
+  </div>
+</body>
+</html>
